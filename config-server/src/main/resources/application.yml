@@ -1,0 +1,17 @@
+server:
+  port: 0
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/arqarq/example-properties
+          default-label: master
+  application:
+    name: ConfigServer

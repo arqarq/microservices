@@ -11,13 +11,11 @@
     <groupId>com.org.rjankowski.ms</groupId>
     <artifactId>registration</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>customers</name>
+    <name>registration</name>
     <description>Demo project for Spring Boot</description>
-
     <properties>
         <java.version>11</java.version>
     </properties>
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -60,7 +58,6 @@
             <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
     </dependencies>
-
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -80,5 +77,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

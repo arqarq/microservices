@@ -27,5 +27,5 @@ public class Customer {
     private Boolean active;
     @OneToMany
     @JoinColumn(name = "customerId")
-    List<Address> addresses;
+    private List<Address> addresses;
 }

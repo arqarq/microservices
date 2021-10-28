@@ -1,6 +1,5 @@
 package com.org.rjankowski.ms.customers;
 
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -16,9 +15,12 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RestController("/")
-@RequiredArgsConstructor
 public class CustomerResource {
     private final CustomerRepository customerRepository;
+
+    CustomerResource(CustomerRepository customerRepository) {
+        this.customerRepository = customerRepository;
+    }
 
     @GetMapping("/customers")
     public ResponseEntity<List<Customer>> getCustomers(@RequestParam(value = "firstName", required = false) String firstName,
@@ -44,13 +46,13 @@ public class CustomerResource {
     }
 
     @PostMapping("/customers")
-    public ResponseEntity createCustomer(@RequestBody Customer customer) {
+    public ResponseEntity<Void> createCustomer(@RequestBody Customer customer) {
         customerRepository.saveAndFlush(customer);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @DeleteMapping("customers/{id}")
-    public ResponseEntity deleteCustomer(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteCustomer(@PathVariable Long id) {
         customerRepository.deleteById(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }

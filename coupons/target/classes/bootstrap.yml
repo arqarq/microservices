@@ -1,7 +1,0 @@
-spring:
-  cloud:
-    config:
-      discovery:
-        enabled: true
-        service-id: ConfigServer
-#      uri: http://localhost:8889

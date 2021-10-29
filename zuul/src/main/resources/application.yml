@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: Zuul
+#zuul:
+#  prefix: /api/v1
+#  ignoredServices: '*'
+#  routes:
+#    cust:
+#      path: /customers/**
+#      serviceId: Customers
+#    registration:
+#      path: /registration/**
+#      serviceId: Registration
+#    coupons:
+#      path: /coupons/**
+#      serviceId: Coupons

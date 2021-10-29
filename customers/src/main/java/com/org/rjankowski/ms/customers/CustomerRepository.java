@@ -2,6 +2,7 @@ package com.org.rjankowski.ms.customers;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -17,8 +18,8 @@ public interface CustomerRepository extends JpaRepository<Customer, Long> {
     @Query("SELECT distinct c FROM Customer c join fetch c.addresses where c.firstName = ?1")
     List<Customer> findAllByFirstName(String f);
 
-    @Query("SELECT distinct c FROM Customer c join fetch c.addresses where c.lastName = :l")
-    List<Customer> findAllByLastName(String l);
+    @Query("SELECT distinct c FROM Customer c where c.lastName = :ll")
+    List<Customer> findAllByLastName(@Param("ll") String l);
 
     List<Customer> findAll();
 

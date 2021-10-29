@@ -6,5 +6,6 @@ eureka:
     register-with-eureka: false
   server:
     enable-self-preservation: true
+    peer-node-read-timeout-ms: 1000
 #  instance:
 #    hostname: localhost
